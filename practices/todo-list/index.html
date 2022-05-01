@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" type="module" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class="title">Todo List</h1>
+
+      <!-- input -->
+      <form id="todo_form">
+        <input
+          type="text"
+          id="todo_item_input"
+          autocomplete="off"
+          placeholder="item"
+        />
+      </form>
+
+      <!-- current list display -->
+      <div id="list_container" class="list-container"></div>
+      <div class="no-elments">Ooops! List is empty</div>
+    </div>
+
+    <template id="buttons">
+        <!-- <template>: a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript. -->
+        <li>
+            <span class="text"></span>
+            <button class="edit">edit</button>
+            <!-- <button class="delete">🗑️</button> -->
+            <button class="delete">delete</button>
+        </li>
+    </template>
+  </body>
+</html>
