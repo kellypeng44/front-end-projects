@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    background: #a1c3ff;
+}
+
+h1, h2 {
+    margin-bottom: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul{
+    list-style-type: none;    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    background: #3474e6;
+    color: #fff;
+    height: 60px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: lightblue;
+}
+
+.navbar .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.header {
+    background-color: #0151cc;
+    color: #fff;
+    min-height: 480px;
+}
+
+.header h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.header img {
+    max-width: 480px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.boxes {
+    height: 300px;
+}
+
+.boxes .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.box {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    background: #0a51cc;
+    border-radius: 10px;
+    flex: 1;
+    margin: 20px 10px;
+    padding: 15px 20px;
+}
+
+.box i {
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: rgb(255, 255, 255);
+    color:rgba(0, 0, 0, 0.6);
+    height: 150px;
+    font-size: 16px;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #0a51cc;
+}
+
+@media (max-width: 723px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .boxes .container {
+        display: block;
+        text-align: center;
+    }
+}
+
+
