@@ -1,6 +1,7 @@
 const projects = [
     { title: "Testimonial Grid", link: "testimonials-grid-section-main" },
-    { title: "Flexbox Landing Page", link: "landing-page"}
+    { title: "Flexbox Landing Page", link: "landing-page"},
+    { title: "Expanding Cards", link: "expanding-cards"},
   ];
   
   const createAnchorElement = (obj) => {
