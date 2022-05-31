@@ -13,6 +13,9 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: white;
     color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
@@ -73,4 +76,13 @@ main a {
 main a:hover {
     background: #04AA6D;
     color: white;
+}
+
+.footer {
+    margin-top: 200px;
+    padding: 40px;
+}
+
+.footer a {
+    color: #FFC0C7;
 }
