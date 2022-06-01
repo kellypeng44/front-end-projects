@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* defining custom properties (variables) to replace color code*/
+:root {
+    /* begins with a double hyphen: --, used as: var(--property-name) */
+    --line-border-fill: cornflowerblue;
+    --line-border-empty: lightgray;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* so the items inside can have absolute position */
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 500px;
+}
+
+.progress-container::before {
+    content:'';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+
+    transform: translateY(-50%); /* to center the middle to the middle */
+    z-index: -1; 
+    /*
+        z-index:auto|number|initial|inherit;
+        The z-index property specifies the stack order of an element.
+        An element with greater stack order is always in front of an element with a lower stack order.
+        Note: z-index only works on positioned elements (position: absolute, relative fixed, or sticky) and flex items.
+    */
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    transition: 0.4s ease-in;
+
+    transform: translateY(-50%); /* to center the middle to the middle */
+    z-index: -1; /* to put it to the back */
+}
+
+.circle {
+    background-color: white;
+    color: #999;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px var(--line-border-empty);
+    transition: 0.4s ease-in;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border-radius: 6px;
+    border: 0;
+    padding: 12px 26px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 5px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 1;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
