@@ -9,7 +9,7 @@ function App() {
   const [temp, setTemp] = useState('');
   const [id, setId] = useState(null);
   const [cel, setCel] = useState(false);
-  const [fetched, setFetched] = useState(true);
+  const [fetched, setFetched] = useState(false);
 
   const setPosition = (position) => {
     console.log(position.coords.latitude, position.coords.longitude);
@@ -28,44 +28,49 @@ function App() {
     getLocation();
   }, []);
 
-  const url = lat && lon && `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6094bad2b39d0c18494fb1fe6179385f`;
+  const url = lat && lon && `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=574a9d589d940f1e9992eb678d002400`;
 
-  // useEffect(() => {
+  // const getWeather = () => {
+  //   setFetched(true);
+  //   fetchURL();
+  // }
+  useEffect(() => {
     // axios.get(url).then((res) => {
     //   console.log(res);
     // })
     const fetchURL = async () => {
-      console.log(url);
+      // console.log(url);
       try {
         const data = await axios.get(url);
         console.log(data.data);
-        setCity(data.data.name);
-        console.log(city);
-        setTemp(data.data.main.temp);
-        console.log(temp);
-        console.log(data.data.weather[0].icon);
-        setId(data.data.weather[0].icon);
+        setCity(data.data.timezone);
+        // console.log(city);
+        setTemp(data.data.current.temp);
+        // console.log(temp);
+        // console.log(data.data.current.weather[0].icon);
+        setId(data.data.current.weather[0].icon);
       } catch(err) {
         console.log(err);
       }
     };
-  //   fetchURL();
-  // }, [url]);
+    fetchURL();
+  }, [fetched, url]);
 
   return (
     <div>
       { fetched ? 
       <div>
         <img src={id ? `http://openweathermap.org/img/wn/${id}@2x.png` : ''} alt='icon' />
-        <h1>{city}</h1>
-        <h4>{cel ? (Number(temp)-273.15).toFixed(2).toString() : ((Number(temp)-273.15)*9/5+32).toFixed(2).toString()}</h4>
+        <h2>{city}</h2>
+        <h3>{cel ? (Number(temp)-273.15).toFixed(2).toString().concat("°C") : ((Number(temp)-273.15)*9/5+32).toFixed(2).toString().concat("°F")} </h3>
         <button onClick={() => {
           setCel(!cel);
         }}>Celsius/Fahrenheit</button>
       </div>
       :
-      <div>
-        <button onClick={fetchURL()}></button>
+      <div className='container'>
+        {/* <button onClick={getWeather()}>Get Weather</button> */}
+        <button onClick={() => setFetched(true)}>Get Weather</button>
         <button onClick={() => {
           setCel(!cel);
         }}>Celsius/Fahrenheit</button>
