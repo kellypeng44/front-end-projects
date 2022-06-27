@@ -3,6 +3,7 @@ const projects = [
     { title: "Flexbox Landing Page", link: "landing-page"},
     { title: "Expanding Cards", link: "expanding-cards"},
     { title: "Progress Steps", link: "progress-steps"},
+    { title: "Rotating Navigation", link: "rotating-navigation"},
   ];
   
   const createAnchorElement = (obj) => {

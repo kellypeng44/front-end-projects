@@ -5,7 +5,7 @@ const { normalize } = require("path/posix");
 function forEach(array, callback) {
     for (let i = 0; i < array.length; i++) {
         callback(array[i], i, array);
-    }
+    } 
 };
 
 // Return a new array which contains the return result of running each item through the function passed to map
