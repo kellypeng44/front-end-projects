@@ -4,6 +4,7 @@ const projects = [
     { title: "Expanding Cards", link: "expanding-cards"},
     { title: "Progress Steps", link: "progress-steps"},
     { title: "Rotating Navigation", link: "rotating-navigation"},
+    { title: "Search Widget", link: "search-widget"},
   ];
   
   const createAnchorElement = (obj) => {
