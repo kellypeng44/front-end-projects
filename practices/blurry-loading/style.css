@@ -1,0 +1,33 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background {
+    background: url('https://www.nationalgallery.org.uk/media/34212/n-4240-00-000027-hd.jpg?center=0.39467849223946783,0.49032258064516127&mode=crop&width=1920&height=1080&rnd=132385896042230000') no-repeat center center/cover;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: calc(100vw + 80px);
+    height: calc(100vh + 80px);
+    z-index: -1; /* behind text */
+    /* syntax: blur(radius) */
+    filter: blur(0px);
+}
+
+.loading {
+    font-size: 80px;
+    color: #ffffe6;
+}
