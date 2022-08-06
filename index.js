@@ -6,6 +6,7 @@ const projects = [
     { title: "Rotating Navigation", link: "rotating-navigation"},
     { title: "Search Widget", link: "search-widget"},
     { title: "Blurry Loading", link: "blurry-loading"},
+    { title: "Split Landing Page", link: "split-landing"}
   ];
   
   const createAnchorElement = (obj) => {
